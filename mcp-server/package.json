@@ -1,0 +1,15 @@
+{
+  "name": "nestdrive-mcp-server",
+  "version": "1.0.0",
+  "description": "NestDrive MCP Server for Claude Desktop",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5"
+  }
+}

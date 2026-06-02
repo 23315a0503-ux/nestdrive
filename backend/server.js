@@ -8,10 +8,15 @@ import folderRoutes from './routes/folders.js';
 import imageRoutes from './routes/images.js';
 
 const app = express();
+const allowedOrigin = process.env.FRONTEND_URL || '*';
 
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
 app.use(cors({
-  origin: process.env.FRONTEND_URL || '*',
+  origin: allowedOrigin,
+  credentials: true,
+}));
+app.options('*', cors({
+  origin: allowedOrigin,
   credentials: true,
 }));
 app.use(express.json());
